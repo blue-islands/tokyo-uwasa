@@ -6,6 +6,8 @@ import org.restlet.Restlet;
 import org.restlet.data.Protocol;
 import org.restlet.routing.Router;
 
+import jp.livlog.tokyouwasa.resource.LatLngResource;
+import jp.livlog.tokyouwasa.resource.MeshCodeResource;
 import jp.livlog.tokyouwasa.resource.UwasaResource;
 
 /**
@@ -25,8 +27,8 @@ public class TokyouwasaApplication extends Application {
         final var router = new Router(this.getContext());
 
         router.attach("/api/uwasa", UwasaResource.class);
-        // router.attach("/api/sceneryJudgment", SceneryJudgmentResource.class);
-        // router.attach("/api/chimei", ChimeiResource.class);
+        router.attach("/api/meshcode", MeshCodeResource.class);
+        router.attach("/api/latlng", LatLngResource.class);
 
         return router;
     }
